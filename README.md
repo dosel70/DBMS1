@@ -754,36 +754,68 @@ VIEW 문법
  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>	
 ubuntu sql 세팅 명령어 
 > sudo passwd
+
 > 1234
+
 > su root
+> 
 > 1234
+> 
 > rm /etc/localtime
+> 
 > ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+> 
 > date
+> 
 > su ubuntu
+> 
 > sudo apt update
+> 
 > sudo apt upgrade
+> 
 > sudo apt install mysql-server
+> 
 > sudo ufw allow mysql
+> 
 > sudo systemctl start mysql
+> 
 > sudo systemctl enable mysql
+> 
 > sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+> 
    i
-   # bind-address = 127.0.0.1
+   
+   (bind-address는 vi 내에서 주석 처리해야한다. )
+   bind-address = 127.0.0.1
+   
    esc
+   
    :wq
+   
 > sudo /etc/init.d/mysql restart
+> 
 > sudo /usr/bin/mysql -u root -p
+> 
 > 1234
+> 
 > use mysql;
+> 
 > create user 'mysql'@'%' identified by '1234';
+> 
 > grant all privileges on *.* to 'mysql'@'%' with grant option;
+> 
 > flush privileges;
+> 
 > exit
+> 
 > sudo /usr/bin/mysql -u mysql -p
+> 
 > 1234
+> 
 > create database test;
+> 
 > use test;
+> 
 > exit
 
 
